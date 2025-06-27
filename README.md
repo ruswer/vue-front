@@ -1,6 +1,3 @@
-
-<p>2. Open windzo folder and follow the step </p>
-
 ## Step to run this app
 
 ## 1. Project setup
