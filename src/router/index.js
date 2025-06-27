@@ -15,6 +15,8 @@ import Login from "../views/layouts/auth/Login.vue";
 import Register from "../views/layouts/auth/Register.vue";
 import ForgotPassword from "../views/layouts/auth/forgot-password.vue";
 import StudentList from "../views/students/StudentList.vue";
+import AddStudent from "../views/students/AddStudent.vue";
+import Parents from "../views/students/Parents.vue";
 
 // layouts
 import Blank from "../views/layouts/Blank.vue";
@@ -117,6 +119,18 @@ const routes = [
     name: "StudentsList",
     component: StudentList,
     meta: { title: "O'quvchilar ro'yxati" + appname },
+  },
+  {
+    path: "/students/add",
+    name: "AddStudent",
+    component: AddStudent,
+    meta: { title: "Yangi o'quvchi qo'shish" + appname },
+  },
+  {
+    path: "/students/parents",
+    name: "Parents",
+    component: Parents,
+    meta: { title: "Ota-onalar" + appname },
   },
   // layout/error
   // default page 404

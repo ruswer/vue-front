@@ -230,6 +230,13 @@
                 >
                   Yangi o'quvchi
                 </router-link>
+                <router-link
+                  to="/students/parents"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/students/parents' }"
+                >
+                  Ota-onalar
+                </router-link>
               </template>
             </menu-accordion>
           </div>

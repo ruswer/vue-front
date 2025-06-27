@@ -17,14 +17,42 @@ export const useSidebar = defineStore({
             url: "/",
           },
           {
+           name: "Students",
+           icon: "ph:student-bold",
+           type: "accordion",
+           url: false,
+           isChildren: true,
+           children: [
+             {
+               name: "Student List",
+               url: "/students/list",
+               icon: false,
+               type: "default",
+             },
+             {
+               name: "Add Student",
+               url: "/students/add",
+               icon: false,
+               type: "default",
+             },
+             {
+               name: "Parents",
+               url: "/students/parents",
+               icon: false,
+               type: "default",
+             },
+           ],
+          },
+          {
             name: "Components",
-            icon: "",
+            icon: "gg:components",
             type: "accordion",
             url: false,
             isChildren: true,
             children: [
               {
                 name: "Alert",
+                url: "/component/alert",
                 icon: false,
                 type: "default",
               },

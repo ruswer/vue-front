@@ -87,28 +87,33 @@
           {{ item.name }}
         </p>
         <div class="wrap-item mt-4 dark:text-gray-500">
-          <!-- <div
-            class="item"
-            v-for="(child, id) in item.children"
-            :key="id"
-          >
-            <router-link
-              v-if="child.type == 'default'"
-              :to="url"
-              exact
-              class="w-full flex text-left rounded-md box-border p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
-            >
-              <span class="mr-3 text-xl"><Icon :icon="child.icon" /></span>
-              <span class="w-full"> {{ child.name }} </span>
-            </router-link> -->
-          <!-- <menu-accordion v-else>
-              <template v-slot:icon>
-                <Icon :icon="child.icon" />
-              </template>
-              <template v-slot:title>{{ child.name }}</template>
-              <template v-slot:content> </template>
-            </menu-accordion> -->
-          <!-- </div> -->
+           <div class="item" v-for="(child, id) in item.children" :key="id">
+             <router-link
+               v-if="child.type == 'default'"
+               :to="child.url"
+               exact
+               class="w-full flex text-left rounded-md box-border p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
+             >
+               <span class="mr-3 text-xl"><Icon :icon="child.icon" /></span>
+               <span class="w-full"> {{ child.name }} </span>
+             </router-link>
+             <menu-accordion v-else>
+               <template v-slot:icon>
+                 <Icon :icon="child.icon" />
+               </template>
+               <template v-slot:title>{{ child.name }}</template>
+               <template v-slot:content>
+                  <router-link
+                   v-for="(subchild, subid) in child.children"
+                   :key="subid"
+                   :to="subchild.url"
+                   class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
+                 >
+                   {{ subchild.name }}
+                 </router-link>
+               </template>
+             </menu-accordion>
+           </div>
         </div>
       </div>
     </div>
@@ -129,8 +134,6 @@
       Icon,
       MenuAccordion,
     },
-    mounted() {
-      console.log(this.sidebarList.menu.map());
-    },
+    mounted() {},
   };
 </script>

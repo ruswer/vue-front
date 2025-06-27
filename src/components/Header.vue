@@ -1,6 +1,6 @@
 <template>
   <!-- this header -->
-  <header class="bg-white dark:bg-gray-800 p-2 border-b-2 dark:border-gray-700">
+  <header class="bg-white dark:bg-gray-800 p-2 border-b-2 dark:border-gray-700 shadow-md">
     <div class="wrap-header flex items-center gap-5 justify-between flex-wrap">
       <div class="flex flex-no-shrink items-center">
         <button

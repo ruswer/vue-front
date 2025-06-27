@@ -1,15 +1,15 @@
 <template>
-  <div class="flex flex-col h-full">
+  <div class="flex flex-col h-full mt-6">
     <!-- Breadcrumb -->
-    <Breadcrumb :items="breadcrumbItems" class="mb-4 mx-4 lg:mx-8" />
+    <Breadcrumb :items="breadcrumbItems" class="mb-4 mx-4" />
     <!-- Header Section -->
-    <div class="flex-1 bg-white rounded-md shadow-sm mx-4 lg:mx-8">
-      <div class="flex items-center justify-between p-4 rounded-md shadow-sm bg-white">
+    <div class="flex-1 bg-white rounded-md shadow-sm mx-4">
+      <div class="flex items-center justify-between p-4">
         <!-- Left: Import Button -->
         <div class="flex items-center">
           <a
             href="/admin/import-students"
-            class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+            class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
           >
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
@@ -19,15 +19,15 @@
         </div>
         <!-- Right: Add Student Button -->
         <div>
-          <a
-            href="/admin/add-student"
-            class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary-500 hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+          <router-link
+            to="/students/add"
+            class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary-500 hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
           >
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
             O'quvchi qo'shish
-          </a>
+          </router-link>
         </div>
       </div>
       <!-- Search Section -->
@@ -46,7 +46,7 @@
       />
     </div>
     <!-- Content Section -->
-    <div class="flex-1 mt-4 bg-white rounded-md shadow-sm p-4 mx-4 lg:mx-8">
+    <div class="flex-1 mt-4 bg-white rounded-md shadow-sm p-4 mx-4">
       <!-- Table Responsive Wrapper -->
       <div class="overflow-x-auto bg-white">
         <StudentTable
@@ -136,15 +136,15 @@ export default {
     const isFilterActive = computed(() => !!selectedBranch.value || !!selectedGroup.value);
     const isSearchActive = computed(() => !!search.value);
     const columns = ref({
-      'O\'quvchi Ismi': 'name',
-      'Filial': 'branch',
-      'Holati': 'status',
-      'Kurs': 'course',
-      'Guruh': 'group',
-      'Tel.raqami': 'phone',
-      'Til': 'language',
-      'Darajasi': 'level',
-      'Dars kunlari': 'study_days'
+      name: "O'quvchi Ismi",
+      branch: 'Filial',
+      status: 'Holati',
+      course: 'Kurs',
+      group: 'Guruh',
+      phone: 'Tel.raqami',
+      language: 'Til',
+      level: 'Darajasi',
+      study_days: 'Dars kunlari'
     });
 
     // Methods

@@ -8,7 +8,7 @@
         <input
           v-bind="inputProps"
           :id="inputProps.name"
-          :class="['mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 sm:text-sm', inputProps.error ? 'border-red-500' : '']"
+          :class="['mt-1 block w-full rounded-md border border-gray-500 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 sm:text-sm p-3', inputProps.error ? 'border-red-500' : '']"
         />
         <span v-if="inputProps.helper" class="text-xs text-gray-400">{{ inputProps.helper }}</span>
         <span v-if="inputProps.error" class="text-xs text-red-500">{{ inputProps.error }}</span>
@@ -19,7 +19,7 @@
         <select
           v-bind="selectProps"
           :id="selectProps.name"
-          :class="['mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 sm:text-sm', selectProps.error ? 'border-red-500' : '']"
+          :class="['mt-1 block w-full rounded-md border border-gray-500 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 sm:text-sm p-3', selectProps.error ? 'border-red-500' : '']"
         >
           <option v-for="option in selectProps.options" :key="option.value" :value="option.value">{{ option.label }}</option>
         </select>
@@ -32,7 +32,7 @@
         <textarea
           v-bind="textareaProps"
           :id="textareaProps.name"
-          :class="['mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 sm:text-sm', textareaProps.error ? 'border-red-500' : '']"
+          :class="['mt-1 block w-full rounded-md border border-gray-500 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500 sm:text-sm p-3', textareaProps.error ? 'border-red-500' : '']"
         />
         <span v-if="textareaProps.helper" class="text-xs text-gray-400">{{ textareaProps.helper }}</span>
         <span v-if="textareaProps.error" class="text-xs text-red-500">{{ textareaProps.error }}</span>

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col lg:flex-row bg-white p-4 rounded-md gap-4">
+  <div class="flex flex-col lg:flex-row bg-white p-6 rounded-md gap-6 border">
     <!-- Chap tomon: Filial va guruh filterlari -->
     <div class="w-full lg:w-1/2">
       <Form
@@ -17,7 +17,7 @@
                   name: 'branch',
                   value: selectedBranchLocal,
                   options: [{ value: '', label: 'Barcha filiallar' }, ...branches.map(branch => ({ value: branch.id, label: branch.name }))],
-                  class: 'mt-1 block w-full rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 sm:text-sm transition-all duration-150'
+                  class: 'mt-1 block w-full p-3 rounded-lg border border-gray-300 bg-white focus:border-blue-500 sm:text-sm transition-all duration-150'
                 }"
                 @update:modelValue="selectedBranchLocal = $event; $emit('update:selectedBranch', $event)"
               />
@@ -30,7 +30,7 @@
                   name: 'group',
                   value: selectedGroupLocal,
                   options: [{ value: '', label: 'Barcha guruhlar' }, ...groups.map(group => ({ value: group.id, label: group.name }))],
-                  class: 'mt-1 block w-full rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 sm:text-sm transition-all duration-150'
+                  class: 'mt-1 block w-full p-3 rounded-lg border border-gray-300 bg-white focus:border-blue-500 sm:text-sm transition-all duration-150'
                 }"
                 @update:modelValue="selectedGroupLocal = $event; $emit('update:selectedGroup', $event)"
               />
@@ -40,7 +40,7 @@
         <template #actions>
           <button
             type="submit"
-            class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-700 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 w-full sm:w-auto"
+            class="inline-flex items-center px-4 py-2.5 border border-transparent text-base font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 w-full sm:w-auto"
           >
             <svg class="w-5 h-5 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -66,7 +66,7 @@
                 type: 'text',
                 value: searchLocal,
                 placeholder: 'Ism, telefon yoki ID kiriting',
-                class: 'mt-1 w-full rounded-md border border-gray-300 focus:border-blue-500 focus:ring-blue-500 sm:text-sm'
+                class: 'mt-1 w-full p-3 rounded-md border border-gray-300 bg-white focus:border-blue-500 sm:text-sm'
               }"
               @update:modelValue="searchLocal = $event; $emit('update:search', $event); $emit('debounceSearchByKeyword')"
             />
@@ -76,7 +76,7 @@
           <button
             @click="$emit('searchByKeyword')"
             type="button"
-            class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-700 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 w-full sm:w-auto"
+            class="inline-flex items-center px-4 py-2.5 border border-transparent text-base font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 w-full sm:w-auto"
           >
             <svg class="w-5 h-5 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -128,8 +128,3 @@ export default {
 };
 </script>
 
-<style scoped>
-select, input {
-  background: #f9fafb;
-}
-</style>
