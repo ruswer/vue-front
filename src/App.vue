@@ -37,7 +37,7 @@
       >
         <router-view />
       </transition>
-      <Footer v-if="!$route.meta.hideNav" />
+      <!-- <Footer v-if="!$route.meta.hideNav" /> -->
     </div>
   </div>
   <!-- End app -->
@@ -47,7 +47,7 @@
   // Vue components
   import Sidebar from "@/components/Sidebar";
   import Header from "@/components/Header";
-  import Footer from "@/components/Footer";
+  // import Footer from "@/components/Footer";
   // npm-js
   import Scrollbar from "smooth-scrollbar";
 
@@ -63,7 +63,7 @@
 
     components: {
       Header,
-      Footer,
+      // Footer,
       Sidebar,
     },
     methods: {

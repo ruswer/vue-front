@@ -14,6 +14,7 @@ import Vmodal from "../views/components/modal.vue";
 import Login from "../views/layouts/auth/Login.vue";
 import Register from "../views/layouts/auth/Register.vue";
 import ForgotPassword from "../views/layouts/auth/forgot-password.vue";
+import StudentList from "../views/students/StudentList.vue";
 
 // layouts
 import Blank from "../views/layouts/Blank.vue";
@@ -24,7 +25,7 @@ import Page500 from "../views/layouts/error/500.vue";
 import PageMaintenance from "../views/layouts/error/maintenance.vue";
 import Tables from "../views/tables.vue";
 
-var appname = " - Windzo Dashboard Admin Template";
+var appname = " - doRus";
 
 const routes = [
   // Routes
@@ -110,6 +111,12 @@ const routes = [
     name: "ForgotPassword",
     component: ForgotPassword,
     meta: { title: "i Forgot Password" + appname, hideNav: true },
+  },
+  {
+    path: "/students/list",
+    name: "StudentsList",
+    component: StudentList,
+    meta: { title: "O'quvchilar ro'yxati" + appname },
   },
   // layout/error
   // default page 404

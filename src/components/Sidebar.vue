@@ -54,7 +54,8 @@
             <router-link
               to="/"
               exact
-              class="w-full flex text-left rounded-md box-border p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
+              class="w-full flex text-left rounded-md box-border p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+              :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/' }"
             >
               <span class="mr-3 text-xl"><Icon icon="bxs:dashboard" /></span>
               <span class="w-full"> Dashboard </span>
@@ -69,49 +70,57 @@
               <template v-slot:content>
                 <router-link
                   to="/component/alert"
-                  class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/component/alert' }"
                 >
                   Alert
                 </router-link>
                 <router-link
                   to="/component/accordion"
-                  class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/component/accordion' }"
                 >
                   Accordion
                 </router-link>
                 <router-link
                   to="/component/badge"
-                  class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/component/badge' }"
                 >
                   Badge
                 </router-link>
                 <router-link
                   to="/component/breadcumb"
-                  class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/component/breadcumb' }"
                 >
                   Breadcumb
                 </router-link>
                 <router-link
                   to="/component/button"
-                  class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/component/button' }"
                 >
                   Button
                 </router-link>
                 <router-link
                   to="/component/card"
-                  class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/component/card' }"
                 >
                   Card
                 </router-link>
                 <router-link
                   to="/component/dropdown"
-                  class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/component/dropdown' }"
                 >
                   Dropdown
                 </router-link>
                 <router-link
                   to="/component/modal"
-                  class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/component/modal' }"
                 >
                   Modal
                 </router-link>
@@ -139,7 +148,8 @@
                 <div class="">
                   <router-link
                     to="/blank"
-                    class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
+                    class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/blank' }"
                   >
                     Blank Page
                   </router-link>
@@ -148,19 +158,22 @@
                     <template v-slot:content>
                       <router-link
                         to="/404page"
-                        class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
+                        class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/404page' }"
                       >
                         404 page
                       </router-link>
                       <router-link
                         to="/500"
-                        class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
+                        class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/500' }"
                       >
                         500 page
                       </router-link>
                       <router-link
                         to="/maintenance"
-                        class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
+                        class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/maintenance' }"
                       >
                         Maintenance page
                       </router-link>
@@ -171,25 +184,52 @@
                     <template v-slot:content>
                       <router-link
                         to="/auth/login"
-                        class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
+                        class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/auth/login' }"
                       >
                         Login
                       </router-link>
                       <router-link
                         to="/auth/register"
-                        class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
+                        class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/auth/register' }"
                       >
                         Register
                       </router-link>
                       <router-link
                         to="/auth/forgot-password"
-                        class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
+                        class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/auth/forgot-password' }"
                       >
                         Forgot Password
                       </router-link>
                     </template>
                   </menu-accordion>
                 </div>
+              </template>
+            </menu-accordion>
+          </div>
+          <div class="item mt-3">
+            <menu-accordion>
+              <template v-slot:icon>
+                <Icon icon="mdi:account-group" />
+              </template>
+              <template v-slot:title> O'quvchilar </template>
+              <template v-slot:content>
+                <router-link
+                  to="/students/list"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/students/list' }"
+                >
+                  Ro'yxat
+                </router-link>
+                <router-link
+                  to="/students/add"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/students/add' }"
+                >
+                  Yangi o'quvchi
+                </router-link>
               </template>
             </menu-accordion>
           </div>
@@ -215,7 +255,8 @@
         <div class="item mt-3">
           <router-link to="/tables">
             <button
-              class="text-gray-800 dark:text-gray-500 bg-transparent hover:bg-gray-200 dark:hover:bg-gray-700 w-full flex text-left rounded-md box-border p-3"
+              class="bg-transparent hover:bg-gray-100 dark:hover:bg-gray-700 w-full flex text-left rounded-md box-border p-3"
+              :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/tables' }"
             >
               <span class="mr-3 text-xl"><Icon icon="bi:table" /></span>
               <span class="w-full"> Tables </span>

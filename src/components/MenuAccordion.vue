@@ -5,7 +5,7 @@
     :aria-expanded="isOpen"
     :aria-controls="`collapse${_uid}`"
     :class="{
-      'bg-gray-200  dark:bg-gray-700': isOpen,
+      'bg-gray-200 dark:bg-gray-700': isOpen,
       'bg-transparent': !isOpen,
     }"
   >
@@ -46,7 +46,6 @@
         isOpen: false,
       };
     },
-
     methods: {
       toggleAccordion() {
         this.isOpen = !this.isOpen;

@@ -1,5 +1,5 @@
 {
-  "name": "windzo",
+  "name": "crm-school",
   "version": "1.0.1",
   "description": "Free Open Source Template Dashboard Admin Vue Tailwind CSS",
   "private": false,
@@ -19,6 +19,7 @@
   "dependencies": {
     "apexcharts": "^3.34.0",
     "autoprefixer": "^10.4.14",
+    "axios": "^1.10.0",
     "chart.js": "^3.7.1",
     "click-outside-vue3": "^4.0.1",
     "core-js": "^3.8.3",
