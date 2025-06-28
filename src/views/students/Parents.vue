@@ -19,16 +19,20 @@
 
     <!-- Content Section -->
     <div class="flex-1 mt-4 bg-white rounded-md shadow-sm p-4 mx-4">
-        <!-- Search Input -->
-        <div class="mb-4">
-            <input
-                type="text"
-                v-model="search"
-                @input="debounceSearchByKeyword"
-                placeholder="O'quvchi yoki ota-ona..."
-                class="block w-full md:w-1/3 px-3 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
-            />
-        </div>
+      <!-- Ota-onalar ro'yhati sarlavhasi -->
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Ota-onalar ro'yhati</h2>
+
+      <!-- Search Input -->
+      <div class="mb-4">
+        <input
+          type="text"
+          v-model="search"
+          @input="debounceSearchByKeyword"
+          placeholder="O'quvchi yoki ota-ona..."
+          class="block w-full md:w-1/5 px-3 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+        />
+      </div>
+
       <!-- Table Responsive Wrapper -->
       <div class="overflow-x-auto bg-white">
         <ParentTable
@@ -41,6 +45,8 @@
           :isSearchActive="isSearchActive"
           @sort="sort"
           @resetFilters="resetFilters"
+          @open-edit-parent-modal="openEditModal"
+          @open-absence-reason-modal="openAbsenceModal"
         />
         <!-- Pagination -->
         <Pagination
@@ -53,6 +59,46 @@
         />
       </div>
     </div>
+
+    <Modal
+      v-if="showEditModal"
+      :title="'Ota-onani tahrirlash'"
+      :btnTextSubmit="'Saqlash'"
+      :btnTextClose="'Bekor qilish'"
+      v-model:isOpen="showEditModal"
+      @submit="submitEdit"
+    >
+      <template #body>
+        <div class="space-y-4">
+          <input v-model="editParentName" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ota-ona ismi" />
+          <input v-model="editParentPhone" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ota-ona telefon raqami" />
+          <input v-model="editParentEmail" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ota-ona email" />
+        </div>
+      </template>
+    </Modal>
+
+    <!-- Qo'l tugmasi uchun modal (darsga kelmaslik sababi) -->
+    <Modal
+      v-if="showAbsenceModal"
+      :title="'Darsga kelmaslik sababi'"
+      :btnTextSubmit="'Saqlash'"
+      :btnTextClose="'Bekor qilish'"
+      v-model:isOpen="showAbsenceModal"
+      @submit="submitAbsenceReason"
+    >
+      <template #body>
+        <div class="space-y-4">
+          <label class="block mb-2">Sababni tanlang:</label>
+          <select v-model="absenceReason" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option value="">Sababni tanlang</option>
+            <option value="kasal">Kasal</option>
+            <option value="oilaviy">Oilaviy sabab</option>
+            <option value="boshqa">Boshqa</option>
+          </select>
+          <input v-if="absenceReason === 'boshqa'" v-model="absenceReasonText" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Boshqa sabab..." />
+        </div>
+      </template>
+    </Modal>
   </div>
 </template>
 
@@ -64,10 +110,11 @@ import Breadcrumb from '@/components/Breadcrumb.vue';
 import ParentFilter from '@/components/parents/ParentFilter.vue';
 import ParentTable from '@/components/parents/ParentTable.vue';
 import Pagination from '@/components/students/Pagination.vue';
+import Modal from '@/components/modal.vue';
 
 export default {
   name: 'Parents',
-  components: { Breadcrumb, ParentFilter, ParentTable, Pagination },
+  components: { Breadcrumb, ParentFilter, ParentTable, Pagination, Modal },
   setup() {
     // Reactive state
     const selectedBranch = ref('');
@@ -89,6 +136,18 @@ export default {
       hasMorePages: false,
       pages: []
     });
+
+    // Edit modal state
+    const showEditModal = ref(false);
+    const editParentName = ref('');
+    const editParentPhone = ref('');
+    const editParentEmail = ref('');
+    const editingParentId = ref(null);
+
+    // Absence reason modal state
+    const showAbsenceModal = ref(false);
+    const absenceReason = ref('');
+    const absenceReasonText = ref('');
 
     // Computed properties
     const isFilterActive = computed(() => !!selectedBranch.value || !!selectedGroup.value);
@@ -207,6 +266,26 @@ export default {
       fetchData();
     };
 
+    const openEditModal = (id) => {
+      editingParentId.value = id;
+      showEditModal.value = true;
+      // Ma'lumotlarni yuklash yoki formani to'ldirish
+    };
+
+    const submitEdit = () => {
+      // Tahrirlangan ma'lumotlarni saqlash
+      showEditModal.value = false;
+    };
+
+    const openAbsenceModal = () => {
+      showAbsenceModal.value = true;
+    };
+
+    const submitAbsenceReason = () => {
+      // Darsga kelmaslik sababini saqlash
+      showAbsenceModal.value = false;
+    };
+
     // Initialize data
     fetchBranches();
     fetchGroups();
@@ -238,7 +317,19 @@ export default {
       previousPage,
       nextPage,
       gotoPage,
-      breadcrumbItems
+      breadcrumbItems,
+      showEditModal,
+      editParentName,
+      editParentPhone,
+      editParentEmail,
+      editingParentId,
+      showAbsenceModal,
+      absenceReason,
+      absenceReasonText,
+      openEditModal,
+      submitEdit,
+      openAbsenceModal,
+      submitAbsenceReason
     };
   }
 };

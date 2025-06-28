@@ -3,6 +3,9 @@
     <table class="min-w-full text-left text-sm whitespace-nowrap">
       <thead class="uppercase tracking-wider border-b-2 text-gray-800 bg-gray-100">
         <tr>
+          <th class="p-px">
+            <div class="px-6 py-4">O'quvchi</div>
+          </th>
           <th v-for="(label, column) in columns" :key="column" class="p-px">
             <div class="px-6 py-4 hover:bg-gray-100 cursor-pointer select-none" @click="$emit('sort', column)">
               {{ label }}
@@ -24,19 +27,33 @@
       </thead>
       <tbody>
         <tr v-if="!students.length">
-          <td :colspan="Object.keys(columns).length + 1">
+          <td :colspan="Object.keys(columns).length + 2">
             <slot name="empty"></slot>
           </td>
         </tr>
         <tr v-else v-for="student in students" :key="student.id" class="border-b hover:bg-gray-50">
           <td class="px-6 py-4">
-            <a
-              href="#"
-              @click.prevent="$emit('show-student-profile', student.id)"
-              class="text-blue-600 hover:text-blue-900 hover:underline"
-            >
-              {{ student.first_name }} {{ student.last_name }}
-            </a>
+            <div class="flex items-center space-x-3">
+              <img
+                v-if="student.avatar"
+                :src="student.avatar"
+                alt="avatar"
+                class="w-9 h-9 rounded-full object-cover border border-gray-200"
+              />
+              <div v-else class="w-9 h-9 rounded-full bg-gray-200 flex items-center justify-center text-gray-500">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A9 9 0 1112 21a9 9 0 01-6.879-3.196z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <a
+                href="#"
+                @click.prevent="$emit('show-student-profile', student.id)"
+                class="text-blue-600 hover:text-blue-900 hover:underline"
+              >
+                {{ student.first_name }} {{ student.last_name }}
+              </a>
+            </div>
           </td>
           <td class="px-6 py-4">{{ student.branch?.name || '-' }}</td>
           <td class="px-6 py-4">{{ student.status?.name || '-' }}</td>

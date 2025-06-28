@@ -3,7 +3,7 @@
     <!-- Breadcrumb -->
     <Breadcrumb :items="breadcrumbItems" class="mb-4 mx-4" />
     <!-- Header Section -->
-    <div class="flex-1 bg-white rounded-md shadow-sm mx-4">
+    <div class="flex-1 bg-white rounded-md shadow mx-4">
       <div class="flex items-center justify-between p-4">
         <!-- Left: Import Button -->
         <div class="flex items-center">

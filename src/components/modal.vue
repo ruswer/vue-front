@@ -41,14 +41,18 @@
         type: String,
         default: "Show Modal",
       },
+      isOpen: {
+        type: Boolean,
+        default: false,
+      },
     },
-    data() {
-      _uid += 1;
-      return {
-        id: `modal-num-${_uid}`,
-        isOpen: false,
-      };
-    },
+    emits: ['submitForm', 'submit', 'close', 'update:isOpen'],
+    methods: {
+      closeModal() {
+        this.$emit('update:isOpen', false);
+        this.$emit('close');
+      }
+    }
   };
 </script>
 
@@ -61,13 +65,14 @@
             'bg-gray-800/50 ': backdrop,
             'bg-transparent': !backdrop,
           }"
-          class="modal-overlay p-5"
-          @click.self="isOpen = false"
+          class="modal-overlay p-5 flex items-center justify-center"
+          @click.self="closeModal"
           v-show="isOpen"
         >
           <div
             :class="width"
             class="container mx-auto pt-10"
+            style="margin: 0 auto;"
           >
             <form @submit.prevent="$emit('submitForm')">
               <div
@@ -87,7 +92,7 @@
                     <div>
                       <button
                         class="text-sm text-gray-700"
-                        @click="isOpen = false"
+                        @click="closeModal"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +121,7 @@
                     <div class="space-x-5 order-2">
                       <button
                         type="button"
-                        @click="isOpen = false"
+                        @click="closeModal"
                         class="px-5 py-2 rounded border dark:border-gray-600 dark:text-white"
                       >
                         {{ btnTextClose }}
@@ -138,13 +143,7 @@
         </div>
       </transition>
     </teleport>
-    <button
-      :class="`${btnColor} hover:${btnColor}/80`"
-      class="border flex text-sm gap-2 text-white dark:border-gray-700 rounded py-3 px-5"
-      @click="isOpen = true"
-    >
-      {{ btnText }}
-    </button>
+    <!-- Pastdagi tugma olib tashlandi -->
   </div>
 </template>
 

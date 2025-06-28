@@ -41,6 +41,18 @@ export const useSidebar = defineStore({
                icon: false,
                type: "default",
              },
+             {
+               name: "Avtorizatsiya ma'lumotlari",
+               url: "/students/auth-info",
+               icon: false,
+               type: "default",
+             },
+             {
+               name: "Safdan chiqarilganlar",
+               url: "/students/removed",
+               icon: false,
+               type: "default",
+             },
            ],
           },
           {

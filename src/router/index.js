@@ -132,6 +132,18 @@ const routes = [
     component: Parents,
     meta: { title: "Ota-onalar" + appname },
   },
+  {
+    path: "/students/auth-info",
+    name: "StudentAuthInfo",
+    component: () => import('@/views/students/StudentAuthInfo.vue'),
+    meta: { title: "Avtorizatsiya ma'lumotlari" + appname },
+  },
+  {
+    path: "/students/removed",
+    name: "StudentRemoved",
+    component: () => import('@/views/students/StudentRemoved.vue'),
+    meta: { title: "Safdan chiqarilganlar" + appname },
+  },
   // layout/error
   // default page 404
   {

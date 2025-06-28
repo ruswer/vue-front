@@ -42,7 +42,12 @@
 
 body {
   overflow: hidden;
-  background-color: "#EEF6FF";
+  @apply bg-gray-100;
+  background-color: #e5e7eb !important; /* bg-gray-200 */
+}
+
+html {
+  background-color: #e5e7eb !important;
 }
 
 .flex-sidebar {

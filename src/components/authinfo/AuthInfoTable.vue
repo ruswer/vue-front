@@ -20,7 +20,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-if="!parents.length && !isLoading">
+        <tr v-if="!students.length && !isLoading">
           <td :colspan="Object.keys(columns).length">
             <slot name="empty">
               <div class="text-center p-4">
@@ -41,19 +41,12 @@
             Yuklanmoqda...
           </td>
         </tr>
-        <tr v-else v-for="parent in parents" :key="parent.id" class="border-b hover:bg-gray-50">
-          <td class="px-6 py-4">
-            <a
-              href="#"
-              class="text-blue-600 hover:text-blue-900 hover:underline cursor-pointer"
-              @click.prevent="$emit('show-student', parent.id)"
-            >
-              {{ parent.student_name }}
-            </a>
-          </td>
-          <td class="px-6 py-4">{{ parent.student_phone }}</td>
-          <td class="px-6 py-4">{{ parent.parent_name }}</td>
-          <td class="px-6 py-4">{{ parent.parent_phone }}</td>
+        <tr v-else v-for="student in students" :key="student.id" class="border-b hover:bg-gray-50">
+          <td class="px-6 py-4">{{ student.first_name }} {{ student.last_name }}</td>
+          <td class="px-6 py-4">{{ student.authorization?.login ?? 'N/A' }}</td>
+          <td class="px-6 py-4 text-gray-400 italic">Yashirilgan</td>
+          <td class="px-6 py-4">{{ student.parents?.[0]?.authorization?.login ?? 'N/A' }}</td>
+          <td class="px-6 py-4 text-gray-400 italic">Yashirilgan</td>
         </tr>
       </tbody>
     </table>
@@ -62,9 +55,9 @@
 
 <script>
 export default {
-  name: 'ParentTable',
+  name: 'AuthInfoTable',
   props: {
-    parents: Array,
+    students: Array,
     columns: Object,
     sortField: String,
     sortDirection: String,
@@ -75,7 +68,6 @@ export default {
   emits: [
     'sort',
     'resetFilters',
-    'show-student',
   ],
 };
 </script>

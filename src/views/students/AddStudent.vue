@@ -4,7 +4,7 @@
     <Breadcrumb :items="breadcrumbItems" class="mb-4 mx-4" />
     <form @submit.prevent="submitForm" class="mx-4">
       <!-- Tepa qism -->
-      <div class="flex-1 bg-white p-4 rounded-md shadow-sm">
+      <div class="flex-1 bg-white p-4 rounded-md shadow">
         <h2 class="text-lg font-bold text-gray-800 mb-4 bg-gray-100 py-4 px-4">O'quvchi Ma'lumotlari</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <!-- Qabul qilinganlik raqami -->
@@ -136,7 +136,7 @@
         <h2 class="text-lg font-bold text-gray-800 mb-4 bg-gray-100 py-4 px-4">
           Ota-onalar Ma'lumotlari
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <!-- Ota yoki onaning ismi -->
           <div>
             <label class="block text-sm font-medium text-gray-700">Ota yoki Onasini ismi</label>
