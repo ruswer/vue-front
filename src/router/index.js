@@ -17,6 +17,7 @@ import ForgotPassword from "../views/layouts/auth/forgot-password.vue";
 import StudentList from "../views/students/StudentList.vue";
 import AddStudent from "../views/students/AddStudent.vue";
 import Parents from "../views/students/Parents.vue";
+import Groups from '../views/education/Groups.vue'
 
 // layouts
 import Blank from "../views/layouts/Blank.vue";
@@ -143,6 +144,62 @@ const routes = [
     name: "StudentRemoved",
     component: () => import('@/views/students/StudentRemoved.vue'),
     meta: { title: "Safdan chiqarilganlar" + appname },
+  },
+  {
+    path: "/marketing/payments",
+    name: "PaymentsList",
+    component: () => import("@/views/marketing/PaymentsList.vue"),
+    meta: { title: "To'lovlar ro'yxati" + appname },
+  },
+  {
+    path: '/marketing/debtors',
+    name: 'Debtors',
+    component: () => import('@/views/marketing/DebtorsList.vue'),
+    meta: { title: "Qarzdorlar" }
+  },
+  {
+    path: '/marketing/report',
+    name: 'MarketingReport',
+    component: () => import('@/views/marketing/MarketingReport.vue'),
+    meta: { title: 'Marketing hisobot' }
+  },
+  {
+    path: '/marketing/advert-types',
+    name: 'AdvertTypes',
+    component: () => import('@/views/marketing/AdvertTypes.vue'),
+    meta: { requiresAuth: true, breadcrumb: ['Marketing', 'Reklama turlari'] }
+  },
+  {
+    path: '/expenses/add',
+    name: 'AddExpense',
+    component: () => import('@/views/expenses/AddExpense.vue'),
+    meta: { requiresAuth: true, breadcrumb: ['Chiqimlar', "Chiqim qo'shish"] }
+  },
+  {
+    path: '/expenses/search',
+    name: 'SearchExpense',
+    component: () => import('@/views/expenses/SearchExpense.vue'),
+    meta: { title: "Chiqimlarni izlash" }
+  },
+  {
+    path: '/expenses/categories',
+    name: 'ExpenseCategories',
+    component: () => import('@/views/expenses/ExpenseCategories.vue'),
+    meta: { title: "Chiqim kategoriyalari" }
+  },
+  {
+    path: '/exams/list',
+    name: 'ExamList',
+    component: () => import('@/views/exams/ExamList.vue'),
+    meta: { breadcrumb: [
+      { text: 'Bosh sahifa', to: '/' },
+      { text: 'Imtihonlar', to: '/exams/list', active: true }
+    ] }
+  },
+  {
+    path: '/education/groups',
+    name: 'EducationGroups',
+    component: Groups
   },
   // layout/error
   // default page 404

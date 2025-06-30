@@ -130,17 +130,6 @@
           <div class="item mt-3">
             <menu-accordion>
               <template v-slot:icon>
-                <Icon icon="ri:layout-2-fill" />
-              </template>
-              <template v-slot:title> Layouts </template>
-              <template v-slot:content>
-                <p>Coming soon.</p>
-              </template>
-            </menu-accordion>
-          </div>
-          <div class="item mt-3">
-            <menu-accordion>
-              <template v-slot:icon>
                 <Icon icon="ri:pages-fill" />
               </template>
               <template v-slot:title> Pages </template>
@@ -254,36 +243,109 @@
               </template>
             </menu-accordion>
           </div>
-        </div>
-      </div>
-      <div class="pb-5">
-        <p class="font-medium text-gray-400 mt-4 dark:text-gray-400">
-          UI Form & Tables
-        </p>
-
-        <div class="item mt-3">
-          <menu-accordion>
-            <template v-slot:icon>
-              <Icon icon="ant-design:form-outlined" />
-            </template>
-            <template v-slot:title> Form Element </template>
-            <template v-slot:content>
-              <p class="text-gray-800 dark:text-gray-500">Coming soon.</p>
-            </template>
-          </menu-accordion>
-        </div>
-
-        <div class="item mt-3">
-          <router-link to="/tables">
-            <button
-              class="bg-transparent hover:bg-gray-100 dark:hover:bg-gray-700 w-full flex text-left rounded-md box-border p-3"
-              :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/tables' }"
-            >
-              <span class="mr-3 text-xl"><Icon icon="bi:table" /></span>
-              <span class="w-full"> Tables </span>
-              <span class="box-border mt-1 text-gray-500"> </span>
-            </button>
-          </router-link>
+          <div class="item mt-3">
+            <menu-accordion>
+              <template v-slot:icon>
+                <Icon icon="mdi:bullhorn" />
+              </template>
+              <template v-slot:title> Marketing </template>
+              <template v-slot:content>
+                <router-link
+                  to="/marketing/payments"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/marketing/payments' }"
+                >
+                  To'lovlar ro'yxati
+                </router-link>
+                <router-link
+                  to="/marketing/debtors"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/marketing/debtors' }"
+                >
+                  Qarzdorlar
+                </router-link>
+                <router-link
+                  to="/marketing/report"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/marketing/report' }"
+                >
+                  Marketing hisobot
+                </router-link>
+                <router-link
+                  to="/marketing/advert-types"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/marketing/advert-types' }"
+                >
+                  Reklama turlari
+                </router-link>
+              </template>
+            </menu-accordion>
+          </div>
+          <div class="item mt-3">
+            <menu-accordion>
+              <template v-slot:icon>
+                <Icon icon="mdi-cash-minus" />
+              </template>
+              <template v-slot:title> Chiqimlar </template>
+              <template v-slot:content>
+                <router-link
+                  to="/expenses/add"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/expenses/add' }"
+                >
+                  Chiqim qo'shish
+                </router-link>
+                <router-link
+                  to="/expenses/search"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/expenses/search' }"
+                >
+                  Chiqimlarni izlash
+                </router-link>
+                <router-link
+                  to="/expenses/categories"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/expenses/categories' }"
+                >
+                  Kategoriyalar
+                </router-link>
+              </template>
+            </menu-accordion>
+          </div>
+          <div class="item mt-3">
+            <menu-accordion>
+              <template v-slot:icon>
+                <Icon icon="mdi:academic-cap" />
+              </template>
+              <template v-slot:title> Imtihonlar </template>
+              <template v-slot:content>
+                <router-link
+                  to="/exams/list"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/exams/list' }"
+                >
+                  Imtihonlar ro'yxati
+                </router-link>
+              </template>
+            </menu-accordion>
+          </div>
+          <div class="item mt-3">
+            <menu-accordion>
+              <template v-slot:icon>
+                <Icon icon="mdi:school" />
+              </template>
+              <template v-slot:title> Ta'lim </template>
+              <template v-slot:content>
+                <router-link
+                  to="/education/groups"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/education/groups' }"
+                >
+                  Guruhlar
+                </router-link>
+              </template>
+            </menu-accordion>
+          </div>
         </div>
       </div>
     </div>

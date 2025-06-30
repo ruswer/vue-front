@@ -147,3 +147,5 @@
 <script>
   export default {};
 </script>
+
+<!-- Ushbu fayl loyihadan olib tashlandi -->

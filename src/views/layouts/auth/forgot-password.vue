@@ -96,3 +96,4 @@
     opacity: 1;
   }
 </style>
+<!-- Ushbu fayl loyihadan olib tashlandi -->

@@ -49,8 +49,8 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import Breadcrumb from '@/components/Breadcrumb.vue'
-import AuthInfoFilter from '@/components/authinfo/AuthInfoFilter.vue'
-import AuthInfoTable from '@/components/authinfo/AuthInfoTable.vue'
+import AuthInfoFilter from '@/components/students/authinfo/AuthInfoFilter.vue'
+import AuthInfoTable from '@/components/students/authinfo/AuthInfoTable.vue'
 
 const selectedBranch = ref('')
 const selectedGroup = ref('')

@@ -64,8 +64,8 @@
 import { ref, computed, onMounted } from 'vue'
 import { debounce } from 'lodash'
 import Breadcrumb from '@/components/Breadcrumb.vue'
-import RemovedStudentsFilter from '@/components/removedstudents/RemovedStudentsFilter.vue'
-import RemovedStudentsTable from '@/components/removedstudents/RemovedStudentsTable.vue'
+import RemovedStudentsFilter from '@/components/students/removedstudents/RemovedStudentsFilter.vue'
+import RemovedStudentsTable from '@/components/students/removedstudents/RemovedStudentsTable.vue'
 import Modal from '@/components/modal.vue'
 
 const selectedBranch = ref('')

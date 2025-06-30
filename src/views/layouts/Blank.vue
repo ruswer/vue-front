@@ -6,3 +6,13 @@
     </div>
   </div>
 </template>
+
+<script>
+// Ushbu fayl loyihadan olib tashlandi
+export default {
+  name: "Blank",
+};
+</script>
+
+<style scoped>
+</style>

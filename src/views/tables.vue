@@ -1,14 +1,13 @@
 <template>
   <div>
-    <Tables />
+    <!-- Tables component has been removed from the project -->
   </div>
 </template>
 
 <script>
-  import Tables from "@/components/Tables.vue";
   export default {
     components: {
-      Tables,
+      // Tables component is no longer used
     },
   };
 </script>

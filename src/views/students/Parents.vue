@@ -107,8 +107,8 @@ import { ref, computed } from 'vue';
 import { debounce } from 'lodash';
 import axios from 'axios';
 import Breadcrumb from '@/components/Breadcrumb.vue';
-import ParentFilter from '@/components/parents/ParentFilter.vue';
-import ParentTable from '@/components/parents/ParentTable.vue';
+import ParentFilter from '@/components/students/parents/ParentFilter.vue';
+import ParentTable from '@/components/students/parents/ParentTable.vue';
 import Pagination from '@/components/students/Pagination.vue';
 import Modal from '@/components/modal.vue';
 
