@@ -2,7 +2,7 @@
   <div class="flex-1 bg-white dark:bg-gray-800 rounded-md shadow-sm p-4">
     <div class="flex items-center justify-between mb-4 pb-4 border-b dark:border-gray-700">
       <h2 class="text-lg font-bold text-gray-800 dark:text-gray-200">Imtihonlar ro'yxati</h2>
-      <button @click="$emit('add-exam')" type="button" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+      <button @click="$emit('add-exam')" type="button" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary-500 hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
         </svg>

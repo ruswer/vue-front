@@ -18,6 +18,7 @@ import StudentList from "../views/students/StudentList.vue";
 import AddStudent from "../views/students/AddStudent.vue";
 import Parents from "../views/students/Parents.vue";
 import Groups from '../views/education/Groups.vue'
+import Branches from '../views/education/Branches.vue'
 
 // layouts
 import Blank from "../views/layouts/Blank.vue";
@@ -200,6 +201,12 @@ const routes = [
     path: '/education/groups',
     name: 'EducationGroups',
     component: Groups
+  },
+  {
+    path: '/education/branches',
+    name: 'EducationBranches',
+    component: Branches,
+    meta: { title: "Filiallar" }
   },
   // layout/error
   // default page 404

@@ -34,8 +34,8 @@
 <script setup>
 import { ref, computed } from 'vue'
 import Breadcrumb from '@/components/marketing/report/Breadcrumb.vue'
-import ExamFilterPanel from './examlist/ExamFilterPanel.vue'
-import ExamTablePanel from './examlist/ExamTablePanel.vue'
+import ExamFilterPanel from '@/components/exams/examlist/ExamFilterPanel.vue'
+import ExamTablePanel from '@/components/exams/examlist/ExamTablePanel.vue'
 const breadcrumbItems = [
   { text: 'Bosh sahifa', to: '/' },
   { text: 'Imtihonlar', to: '/exams/list', active: true }
