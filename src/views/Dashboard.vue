@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard p-4">
-    <!-- end nav -->
+    <Breadcrumb :items="breadcrumbs" />
     <div class="mt-2 w-full">
       <div
         class="lg:flex grid-cols-1 lg:space-y-0 space-y-3 gap-5 justify-between"
@@ -12,6 +12,13 @@
           </h1>
         </div>
         <div class="flex gap-2">
+          <Button type="primary" @click="handleButtonClick('Primary')">Primary</Button>
+          <Button type="secondary" size="sm" @click="handleButtonClick('Secondary')">Secondary</Button>
+          <Button type="danger" size="lg" @click="handleButtonClick('Danger')">Danger</Button>
+          <Button type="success" @click="handleButtonClick('Success')">Success</Button>
+          <Button type="warning" @click="handleButtonClick('Warning')">Warning</Button>
+          <Button type="info" @click="handleButtonClick('Info')">Info</Button>
+          <Button type="blue" :disabled="true" @click="handleButtonClick('Blue')">Blue (Disabled)</Button>
           <button
             class="bg-white dark:bg-gray-800 hover:border-gray-200 dark:hover:bg-gray-700 dark:text-white dark:border-gray-700 border rounded py-2 px-5"
           >
@@ -571,11 +578,13 @@
 <script>
   // @ is an alias to /src
   import { Icon } from "@iconify/vue";
+  import Breadcrumb from "@/components/Breadcrumb.vue";
 
   export default {
     name: "Dashboard",
     data() {
       return {
+        breadcrumbs: [{ text: "Bosh sahifa", to: "/", active: true }],
         // for more guide apexchart.js
         // https://apexcharts.com/docs/chart-types/line-chart/
 
@@ -758,6 +767,7 @@
     },
     components: {
       Icon,
+      Breadcrumb,
     },
     mounted() {},
   };

@@ -78,33 +78,6 @@
           </div>
         </div>
       </div> -->
-      <div class="pb-5">
-        <p class="font-medium text-gray-400 dark:text-gray-400">Ta'lim</p>
-        <div class="wrap-item mt-4 dark:text-gray-500">
-          <div class="item">
-            <menu-accordion>
-              <template v-slot:icon>
-                <Icon icon="ic:round-school" />
-              </template>
-              <template v-slot:title>Ta'lim</template>
-              <template v-slot:content>
-                <router-link
-                  to="/education/groups"
-                  class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
-                >
-                  Guruhlar
-                </router-link>
-                <router-link
-                  to="/education/branches"
-                  class="w-full text-left block rounded-md p-3 hover:bg-gray-200 dark:hover:bg-gray-700"
-                >
-                  Filiallar
-                </router-link>
-              </template>
-            </menu-accordion>
-          </div>
-        </div>
-      </div>
       <div
         class="pb-5"
         :key="index"

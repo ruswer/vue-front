@@ -35,6 +35,39 @@ export const useSidebar = defineStore({
                 icon: false,
                 type: "default",
               },
+              {
+                name: "Kurslar",
+                url: "/education/courses",
+                icon: false,
+                type: "default",
+              },
+              {
+                name: "Bilim darajalari",
+                url: "/education/knowledge-levels",
+                icon: false,
+                type: "default",
+              },
+            ],
+          },
+          {
+            name: "Kadrlar bo'limi",
+            icon: "mdi:account-tie",
+            type: "accordion",
+            url: false,
+            isChildren: true,
+            children: [
+              {
+                name: "Xodimlar",
+                url: "/hr/employees",
+                icon: false,
+                type: "default",
+              },
+              {
+                name: "Xodimlar davomati",
+                url: "/hr/attendance",
+                icon: false,
+                type: "default",
+              },
             ],
           },
            {

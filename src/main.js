@@ -11,6 +11,7 @@ import "./assets/animate.css";
 import "./assets/sass/css/windzo.css";
 import vClickOutside from "click-outside-vue3";
 import Datepicker from "vue3-datepicker";
+import Button from "./components/Button.vue";
 
 const app = createApp(App);
 app.use(router);
@@ -19,4 +20,5 @@ app.use(VueApexCharts);
 app.use(PerfectScrollbar);
 app.use(vClickOutside);
 app.component("Datepicker", Datepicker);
+app.component("Button", Button);
 app.mount("#app");

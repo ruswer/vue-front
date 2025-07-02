@@ -343,6 +343,66 @@
                 >
                   Guruhlar
                 </router-link>
+                <router-link
+                  to="/education/branches"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/education/branches' }"
+                >
+                  Filiallar
+                </router-link>
+                <router-link
+                  to="/education/courses"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/education/courses' }"
+                >
+                  Kurslar
+                </router-link>
+                <router-link
+                  to="/education/knowledge-levels"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/education/knowledge-levels' }"
+                >
+                  Bilim darajalari
+                </router-link>
+                <router-link
+                  to="/education/cabinets"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/education/cabinets' }"
+                >
+                  Kabinetlar
+                </router-link>
+                <router-link
+                  to="/education/timetable"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/education/timetable' }"
+                >
+                  Darslar Jadvali
+                </router-link>
+              </template>
+            </menu-accordion>
+          </div>
+          <div class="item mt-3">
+            <menu-accordion>
+              <template v-slot:icon>
+                <Icon icon="mdi:account-tie" />
+              </template>
+              <template v-slot:title> Kadrlar bo'limi </template>
+              <template v-slot:content>
+                <router-link
+                  to="/hr/employees"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/hr/employees' }"
+                >
+                  Xodimlar
+                </router-link>
+                <router-link
+                  to="/hr/attendance"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/hr/attendance' }"
+                >
+                  Xodimlar davomati
+                </router-link>
+                
               </template>
             </menu-accordion>
           </div>

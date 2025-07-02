@@ -19,7 +19,11 @@ import AddStudent from "../views/students/AddStudent.vue";
 import Parents from "../views/students/Parents.vue";
 import Groups from '../views/education/Groups.vue'
 import Branches from '../views/education/Branches.vue'
-
+import Courses from '../views/education/Courses.vue'
+import Cabinets from '../views/education/Cabinets.vue'
+import Timetable from '../views/education/Timetable.vue'
+import Employees from '../views/hr/Employees.vue'
+import EmployeeAttendance from '../views/hr/EmployeeAttendance.vue'
 // layouts
 import Blank from "../views/layouts/Blank.vue";
 
@@ -207,6 +211,42 @@ const routes = [
     name: 'EducationBranches',
     component: Branches,
     meta: { title: "Filiallar" }
+  },
+  {
+    path: '/education/courses',
+    name: 'EducationCourses',
+    component: Courses,
+    meta: { title: "Kurslar" }
+  },
+  {
+    path: '/education/knowledge-levels',
+    name: 'EducationKnowledgeLevels',
+    component: () => import('@/views/education/KnowledgeLevels.vue'),
+    meta: { title: "Bilim darajalari" }
+  },
+  {
+    path: '/education/cabinets',
+    name: 'EducationCabinets',
+    component: Cabinets,
+    meta: { title: "Kabinetlar" }
+  },
+  {
+    path: '/education/timetable',
+    name: 'EducationTimetable',
+    component: Timetable,
+    meta: { title: "Darslar Jadvali"},
+  },
+  {
+    path: '/hr/employees',
+    name: 'Employees',
+    component: Employees,
+    meta: { title: "Xodimlar" + appname },
+  },
+  {
+    path: '/hr/attendance',
+    name: 'EmployeeAttendance',
+    component: EmployeeAttendance,
+    meta: { title: "Xodimlar davomati" + appname }
   },
   // layout/error
   // default page 404
