@@ -68,6 +68,30 @@ export const useSidebar = defineStore({
                 icon: false,
                 type: "default",
               },
+{
+                name: "Xodimlar davomati hisoboti",
+                url: "/hr/attendance-report",
+                icon: false,
+                type: "default",
+              },
+              {
+                name: "Xodimlar ish haqi",
+                url: "/hr/salary",
+                icon: false,
+                type: "default",
+              },
+              {
+                name: "Bo'limlar",
+                url: "/hr/department",
+                icon: false,
+                type: "default",
+              },
+              {
+                name: "Lavozimlar",
+                url: "/hr/position",
+                icon: false,
+                type: "default",
+              },
             ],
           },
            {
@@ -123,6 +147,29 @@ export const useSidebar = defineStore({
                 type: "default",
               },
             ],
+          },
+        ],
+      },
+      {
+        name: "Tizimni sozlash",
+        children: [
+          {
+            name: "Sozlamalar",
+            url: "/settings",
+            icon: "mdi:cog",
+            type: "default",
+          },
+          {
+            name: "Billing sozlamalari",
+            url: "/settings/billing",
+            icon: "mdi:credit-card",
+            type: "default",
+          },
+          {
+            name: "Rollar va ruxsatlar",
+            url: "/settings/roles-permissions",
+            icon: "mdi:shield-account",
+            type: "default",
           },
         ],
       },

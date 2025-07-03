@@ -402,7 +402,65 @@
                 >
                   Xodimlar davomati
                 </router-link>
-                
+                <router-link
+                  to="/hr/attendance-report"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/hr/attendance-report' }"
+                >
+                  Xodimlar davomati hisoboti
+                </router-link>
+                <router-link
+                  to="/hr/salary"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/hr/salary' }"
+                >
+                  Xodimlar ish haqi
+                </router-link>
+                <router-link
+                  to="/hr/department"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/hr/department' }"
+                >
+                  Bo'limlar
+                </router-link>
+                <router-link
+                  to="/hr/position"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/hr/position' }"
+                >
+                  Lavozimlar
+                </router-link>
+              </template>
+            </menu-accordion>
+          </div>
+          <div class="item mt-3">
+            <menu-accordion>
+              <template v-slot:icon>
+                <Icon icon="mdi:cog" />
+              </template>
+              <template v-slot:title> Tizimni sozlash </template>
+              <template v-slot:content>
+                <router-link
+                  to="/settings"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/settings' }"
+                >
+                  Sozlamalar
+                </router-link>
+                <router-link
+                  to="/settings/billing"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/settings/billing' }"
+                >
+                  Billing sozlamalari
+                </router-link>
+                <router-link
+                  to="/settings/roles-permissions"
+                  class="w-full text-left block rounded-md p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  :class="{ 'text-primary bg-[#EEF6FF]': $route.path === '/settings/roles-permissions' }"
+                >
+                  Rollar va ruxsatlar
+                </router-link>
               </template>
             </menu-accordion>
           </div>

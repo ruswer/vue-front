@@ -24,6 +24,13 @@ import Cabinets from '../views/education/Cabinets.vue'
 import Timetable from '../views/education/Timetable.vue'
 import Employees from '../views/hr/Employees.vue'
 import EmployeeAttendance from '../views/hr/EmployeeAttendance.vue'
+import EmployeeAttendanceReport from '../views/hr/EmployeeAttendanceReport.vue'
+import EmployeeSalary from '../views/hr/EmployeeSalary.vue'
+import Department from '../views/hr/Department.vue'
+import Position from '../views/hr/Position.vue'
+import Settings from '../views/settings/Settings.vue';
+import BillingSettings from '../views/settings/BillingSettings.vue';
+import RolesPermissions from '../views/settings/RolesPermissions.vue';
 // layouts
 import Blank from "../views/layouts/Blank.vue";
 
@@ -247,6 +254,48 @@ const routes = [
     name: 'EmployeeAttendance',
     component: EmployeeAttendance,
     meta: { title: "Xodimlar davomati" + appname }
+  },
+{
+    path: '/hr/attendance-report',
+    name: 'EmployeeAttendanceReport',
+    component: EmployeeAttendanceReport,
+    meta: { title: "Xodimlar davomati hisoboti" + appname }
+  },
+  {
+    path: '/hr/salary',
+    name: 'EmployeeSalary',
+    component: EmployeeSalary,
+    meta: { title: "Xodimlar ish haqi" + appname }
+  },
+  {
+    path: '/hr/department',
+    name: 'Department',
+    component: Department,
+    meta: { title: "Bo'limlar" + appname }
+  },
+  {
+    path: '/hr/position',
+    name: 'Position',
+    component: Position,
+    meta: { title: "Lavozimlar" + appname }
+  },
+  {
+    path: '/settings',
+    name: 'Settings',
+    component: Settings,
+    meta: { title: "Sozlamalar" + appname }
+  },
+  {
+    path: '/settings/billing',
+    name: 'BillingSettings',
+    component: BillingSettings,
+    meta: { title: "Billing sozlamalari" + appname }
+  },
+  {
+    path: '/settings/roles-permissions',
+    name: 'RolesPermissions',
+    component: RolesPermissions,
+    meta: { title: "Rollar va ruxsatlar" + appname }
   },
   // layout/error
   // default page 404
